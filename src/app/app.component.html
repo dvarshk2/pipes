@@ -1,0 +1,46 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="bg-info text-center text-white p-2">Pipes</h2>
+      <p>{{text | uppercase}}</p>
+      <p>{{text | lowercase}}</p>
+      <p>{{text | lowercase | uppercase }}</p>
+      <p>{{text | uppercase | lowercase }}</p>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h2>{{course.tiTle | uppercase}}</h2>
+          <p>{{course.student | number}}</p>
+          <p>{{course.rating | number : '1.2-2'}}</p>
+          <p>{{course.rating | number : '2.2-2'}}</p>
+          <p>{{course.price | currency : 'AUD'}}</p>
+          <p>{{course.price | currency : 'EURO'}}</p>
+          <p>{{course.releaseDate | date : 'short'}}</p>
+          <p>{{course.releaseDate | date : 'medium'}}</p>
+          <p>{{course.releaseDate | date : 'long'}}</p>
+        </div>
+      </div>
+    </div>
+    <p>Lowercase, uppercase, decimal, currency, percentage these are predefined Pipes</p>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <h2 class="bg-primary text-white text-center">Custom Pipe</h2>
+  <div class="row">
+    <div class="col-sm-6">
+      <p>{{texT | summary : 30}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let file of files">
+      <div class="card">
+        <div class="card-body">
+          <p><strong>{{file.name}}</strong></p>
+          <p><strong>{{file.size | megabyte}}</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
